@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import logo from "../images/logo.svg";
 import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { arrayLinks } from '../data/navbar'
 export const Navbar = () => {
-    const [links, setLinks] = useState(arrayLinks);
+    const [links] = useState(arrayLinks);
     const [isOpen, setIsOpen] = useState(false)
     const handleToggle = () => {
         setIsOpen(!isOpen)

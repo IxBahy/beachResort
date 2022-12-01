@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Room } from './components/Room.js'
+// import { Room } from './components/Room.js'
 // import items from './data/data.js'
 import Client from './data/Contentful'
 
@@ -84,8 +84,6 @@ class RoomProvider extends Component {
             type,
             capacity,
             price,
-            minPrice,
-            maxPrice,
             minSize,
             maxSize,
             breakfast,
@@ -97,8 +95,10 @@ class RoomProvider extends Component {
             tempRooms = tempRooms.filter(room => room.type === type)
         }
         //filter by capacity
+        capacity = parseInt(capacity)
+
         if (capacity !== 'all') {
-            tempRooms = tempRooms.filter(room => room.capacity == capacity)
+            tempRooms = tempRooms.filter(room => room.capacity === capacity)
         }
         // filter by price 
         price = parseInt(price)
