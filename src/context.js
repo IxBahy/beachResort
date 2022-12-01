@@ -26,8 +26,8 @@ class RoomProvider extends Component {
     getData = async () => {
         try {
             let response = await Client.getEntries({
-                content_type: 'beachResortRoom',
-                order: 'sys.createdAt'
+                content_type: 'beachResortRoom'
+
             })
             let rooms = this.formatData(response.items)
             let featuredRooms = rooms.filter(room => room.featured === true)
@@ -95,10 +95,10 @@ class RoomProvider extends Component {
             tempRooms = tempRooms.filter(room => room.type === type)
         }
         //filter by capacity
-        capacity = parseInt(capacity)
+
 
         if (capacity !== 'all') {
-            tempRooms = tempRooms.filter(room => room.capacity === capacity)
+            tempRooms = tempRooms.filter(room => room.capacity.toString() === capacity)
         }
         // filter by price 
         price = parseInt(price)
