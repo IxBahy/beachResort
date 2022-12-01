@@ -28,10 +28,10 @@ export const Navbar = () => {
                 </div>
                 {/* nav-header */}
                 <ul className={isOpen ? 'nav-links show-nav' : 'nav-links'}>
-                    {links.map((link) => {
+                    {links.map((link, index) => {
                         const { path, name } = link
                         return < li >
-                            <Link to={path}>{name}</Link>
+                            <Link to={path} key={index} >{name}</Link>
                         </li>
                     })}
                 </ul>

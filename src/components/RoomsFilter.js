@@ -22,7 +22,7 @@ export const RoomsFilter = (rooms) => {
         breakfast,
         pets,
     } = context
-    console.log(maxPrice, minPrice, price);
+
     //unique types
     let types = getUnique(rooms.rooms, 'type')
     //adding the all option

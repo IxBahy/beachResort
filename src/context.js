@@ -13,7 +13,7 @@ class RoomProvider extends Component {
         featuredRooms: [],//in home
         loading: true,
         type: 'all',
-        capacity: 0,
+        capacity: 'all',
         price: 0,
         minPrice: 0,
         maxPrice: 0,
@@ -103,6 +103,8 @@ class RoomProvider extends Component {
         // filter by price 
         price = parseInt(price)
         tempRooms = tempRooms.filter(room => room.price <= price)
+        console.log(rooms[0].price, rooms[0].capacity, price, capacity);
+
         //filter by size
         minSize = parseInt(minSize)
         maxSize = parseInt(maxSize)
@@ -116,7 +118,7 @@ class RoomProvider extends Component {
             tempRooms = tempRooms.filter(room => room.pets === pets)
         }
 
-
+        // console.log(rooms);
         //set the sortedRooms to the output of the filtering process above
         this.setState({
             sortedRooms: tempRooms
